@@ -1,0 +1,5 @@
+libactivemq-cpp (3.9.0-1) unstable; urgency=low
+
+  * Initial Debian release
+
+ -- Mateusz Kramarczyk <kramarczyk@gmail.com>  Thu, 22 Oct 2015 17:36:55 +0200
