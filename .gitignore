@@ -1,0 +1,9 @@
+/build/
+/config/*.dh-orig
+/debian/files
+/debian/*.debhelper.log
+/debian/*.substvars
+/debian/*.debhelper
+/debian/libactivemq-cpp-dev/
+/debian/libactivemq-cpp19/
+/debian/tmp/
