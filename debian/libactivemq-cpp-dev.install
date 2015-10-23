@@ -1,3 +1,4 @@
+usr/bin/activemqcpp-config
 usr/include/*
 usr/lib/*/lib*.a
 usr/lib/*/lib*.so
