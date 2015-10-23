@@ -4,8 +4,14 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+BUILDDIR=build
+
 %:
-	dh $@  --with autotools-dev --builddirectory build --parallel
+	dh $@  --with autotools-dev --builddirectory $(BUILDDIR) --parallel
 
 override_dh_auto_configure:
 	dh_auto_configure -- --disable-doxygen-html
+
+override_dh_auto_test:
+	dh_auto_test
+	$(BUILDDIR)/src/test/activemq-test
