@@ -1,7 +1,7 @@
 Source: libactivemq-cpp
 Priority: optional
 Maintainer: Mateusz Kramarczyk <kramarczyk@gmail.com>
-Build-Depends: debhelper (>= 9), autotools-dev, libcppunit-dev, libapr1-dev, libssl-dev
+Build-Depends: debhelper (>= 9), autoconf (>= 2.61), automake (>= 1.10), libtool (>= 1.5.24), autotools-dev, libcppunit-dev (>= 1.12.1), libapr1-dev (>= 1.3), libssl-dev (>= 1.0.0)
 Standards-Version: 3.9.4
 Section: libs
 Homepage: http://activemq.apache.org/cms
@@ -10,7 +10,7 @@ Package: libactivemq-cpp-dev
 Section: libdevel
 Architecture: amd64
 Pre-Depends: ${misc:Pre-Depends}
-Depends: libactivemq-cpp19 (= ${binary:Version}), libapr1-dev, libssl-dev
+Depends: libactivemq-cpp19 (= ${binary:Version}), libapr1-dev (>= 1.3), libssl-dev (>= 1.0.0)
 Description: JMS-like API for interfacing with brokers - dev files
  Package is a JMS-like API for C++ for interfacing with Message
  Brokers such as Apache ActiveMQ. C++ messaging service helps to make your
@@ -24,7 +24,7 @@ Package: libactivemq-cpp19
 Section: libs
 Architecture: amd64
 Pre-Depends: ${misc:Pre-Depends}
-Depends: ${shlibs:Depends}, ${misc:Depends}, libapr1, libssl1.0.0
+Depends: ${shlibs:Depends}, ${misc:Depends}, libapr1 (>= 1.3), libssl1.0.0 (>= 1.0.0)
 Description: JMS-like API for interfacing with brokers
  Package is a JMS-like API for C++ for interfacing with Message
  Brokers such as Apache ActiveMQ. C++ messaging service helps to make your
