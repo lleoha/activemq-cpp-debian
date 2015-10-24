@@ -1,31 +1,19 @@
 Source: libactivemq-cpp
 Priority: optional
 Maintainer: Mateusz Kramarczyk <kramarczyk@gmail.com>
-Build-Depends: debhelper (>= 9), autoconf (>= 2.61), automake (>= 1.10), libtool (>= 1.5.24), autotools-dev, libcppunit-dev (>= 1.12.1), libapr1-dev (>= 1.3), libssl-dev (>= 1.0.0)
-Standards-Version: 3.9.4
+Build-Depends: debhelper (>= 9), autotools-dev, doxygen, graphviz, autoconf (>= 2.61), automake (>= 1.10), libtool (>= 1.5.24), libcppunit-dev (>= 1.12.1), libapr1-dev (>= 1.3), libssl-dev (>= 1.0.0)
+Standards-Version: 3.9.5
 Section: libs
 Homepage: http://activemq.apache.org/cms
 
-Package: libactivemq-cpp-dev
-Section: libdevel
-Architecture: amd64
-Depends: libactivemq-cpp19 (= ${binary:Version}), libapr1-dev (>= 1.3), libssl-dev (>= 1.0.0)
-Description: JMS-like API for interfacing with brokers - dev files
- Package is a JMS-like API for C++ for interfacing with Message
- Brokers such as Apache ActiveMQ. C++ messaging service helps to make your
- C++ client code much neater and easier to follow. To get a better feel for
- CMS try the API Reference or the getting started page on the ActiveMQ-CPP
- website.
- ActiveMQ-CPP is a client only library, a message broker such as Apache
- ActiveMQ is still needed for your clients to communicate with one another.
-
 Package: libactivemq-cpp19
 Section: libs
-Architecture: amd64
+Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
-Depends: ${shlibs:Depends}, ${misc:Depends}, libapr1 (>= 1.3), libssl1.0.0 (>= 1.0.0)
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Multi-Arch: same
 Description: JMS-like API for interfacing with brokers
- Package is a JMS-like API for C++ for interfacing with Message
+ ActiveMQ-CPP is a JMS-like API for C++ for interfacing with Message
  Brokers such as Apache ActiveMQ. C++ messaging service helps to make your
  C++ client code much neater and easier to follow. To get a better feel for
  CMS try the API Reference or the getting started page on the ActiveMQ-CPP
@@ -33,3 +21,33 @@ Description: JMS-like API for interfacing with brokers
  ActiveMQ-CPP is a client only library, a message broker such as Apache
  ActiveMQ is still needed for your clients to communicate with one another.
 
+Package: libactivemq-cpp-dev
+Section: libdevel
+Architecture: any
+Depends: libactivemq-cpp19 (= ${binary:Version}), ${misc:Depends}, libapr1-dev (>= 1.3), libssl-dev (>= 1.0.0)
+Description: JMS-like API for interfacing with brokers - dev files
+ ActiveMQ-CPP is a JMS-like API for C++ for interfacing with Message
+ Brokers such as Apache ActiveMQ. C++ messaging service helps to make your
+ C++ client code much neater and easier to follow. To get a better feel for
+ CMS try the API Reference or the getting started page on the ActiveMQ-CPP
+ website.
+ ActiveMQ-CPP is a client only library, a message broker such as Apache
+ ActiveMQ is still needed for your clients to communicate with one another.
+ .
+ This package contains development header files.
+
+Package: libactivemq-cpp-dbg
+Section: debug
+Architecture: any
+Priority: extra
+Depends: libactivemq-cpp19 (= ${binary:Version}), ${misc:Depends}
+Description: JMS-like API for interfacing with brokers - dev files
+ ActiveMQ-CPP is a JMS-like API for C++ for interfacing with Message
+ Brokers such as Apache ActiveMQ. C++ messaging service helps to make your
+ C++ client code much neater and easier to follow. To get a better feel for
+ CMS try the API Reference or the getting started page on the ActiveMQ-CPP
+ website.
+ ActiveMQ-CPP is a client only library, a message broker such as Apache
+ ActiveMQ is still needed for your clients to communicate with one another.
+ .
+ This package contains debugging symbols.
